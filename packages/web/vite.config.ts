@@ -9,4 +9,13 @@ export default defineConfig({
     }
   },
   plugins: [vue()],
+  server:{
+    proxy:{
+      '/api':{
+        target:'http://81.70.58.141:13000/',
+        changeOrigin:true,
+        rewrite: path => path.replace('/api', ''),
+      }
+    }
+  }
 })
