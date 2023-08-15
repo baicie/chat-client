@@ -1,0 +1,17 @@
+{
+  "name": "@chat/core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ionic/vue": "^7.2.3",
+    "@ionic/vue-router": "^7.2.3"
+  }
+}
