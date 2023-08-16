@@ -1,15 +1,17 @@
-<template>
-  <ion-app>
-    <ion-router-outlet />
-  </ion-app>
-</template>
-
 <script setup lang="ts">
-import { IonApp, IonRouterOutlet } from '@ionic/vue';
-import {getPlatforms} from '@ionic/core';
-import { onBeforeMount } from 'vue';
+import { IonApp, IonRouterOutlet } from '@ionic/vue'
+import { onBeforeMount } from 'vue'
+import { useGlobalState } from '@/store/global-state'
 
-onBeforeMount(()=>{
-  console.log('getPlatforms',getPlatforms())
+const { initialization } = useGlobalState()
+
+onBeforeMount(() => {
+  initialization()
 })
 </script>
+
+<template>
+  <IonApp>
+    <IonRouterOutlet />
+  </IonApp>
+</template>

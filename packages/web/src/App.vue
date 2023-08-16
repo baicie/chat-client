@@ -1,9 +1,9 @@
-<script setup lang="ts"> 
-import Hello from '@chat/core/views/hello.vue';
+<script setup lang="ts">
+import Hello from '@chat/core/views/hello.vue'
 </script>
 
 <template>
-  <Hello/>
+  <Hello />
 </template>
 
 <style scoped>

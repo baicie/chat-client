@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue'
+import { storeToRefs } from 'pinia'
+import { useGlobalState } from '@/store/global-state'
+const { globalState } = storeToRefs(useGlobalState())
 </script>
 
 <template>
@@ -19,10 +22,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
         </IonToolbar>
       </IonHeader>
 
-      <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-      </div>
+      <div>{{ globalState.platform }}</div>
     </IonContent>
   </IonPage>
 </template>

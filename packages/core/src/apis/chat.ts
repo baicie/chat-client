@@ -1,5 +1,5 @@
-import {request} from '../common';
+import { request } from '../common'
 
-export async function getAliveService(){
+export async function getAliveService() {
   return request.get('/api/supports')
 }

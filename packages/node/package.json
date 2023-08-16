@@ -2,14 +2,14 @@
   "name": "@chat/node",
   "version": "1.0.0",
   "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "pnpm run stub",
     "stub": "unbuild --stub"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }

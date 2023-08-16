@@ -5,12 +5,14 @@
   "main": "index.js",
   "private": "true",
   "scripts": {
-    "cz": "bcz"
+    "cz": "bcz",
+    "lint": "eslint ./packages --fix && eslint ./scripts --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@antfu/eslint-config": "^0.37.0",
     "@baicie/commitizen": "^0.1.0",
     "@chat/core": "workspace:^",
     "@chat/node": "workspace:^",
