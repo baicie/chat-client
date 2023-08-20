@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue'
+import { IonPage } from '@ionic/vue'
 import { storeToRefs } from 'pinia'
 import { useGlobalState } from '@/store/global-state'
 const { globalState } = storeToRefs(useGlobalState())
@@ -7,23 +7,7 @@ const { globalState } = storeToRefs(useGlobalState())
 
 <template>
   <IonPage>
-    <IonHeader :translucent="true">
-      <IonToolbar>
-        <IonTitle>Blank</IonTitle>
-      </IonToolbar>
-    </IonHeader>
-
-    <IonContent :fullscreen="true">
-      <IonHeader collapse="condense">
-        <IonToolbar>
-          <IonTitle size="large">
-            Blank
-          </IonTitle>
-        </IonToolbar>
-      </IonHeader>
-
-      <div>{{ globalState.platform }}</div>
-    </IonContent>
+    homepage
   </IonPage>
 </template>
 

@@ -1,22 +1,41 @@
 import { defineStore } from 'pinia'
 import { reactive } from 'vue'
-import { getPlatforms } from '@ionic/vue'
+import { useThrottleFn } from '@vueuse/core'
 import { STATE } from './store-ids'
 
-type Platform = 'ios' | 'ipad' | 'iphone' | 'android' | 'phablet' | 'tablet' | 'cordova' | 'capacitor' | 'electron' | 'pwa' | 'mobile' | 'mobileweb' | 'desktop' | 'hybrid'
-
+type Platform = 'mobile' | 'desktop'
+interface SliderType {
+  title: string
+  id: string
+}
 interface GlobalState {
-  platform: Platform[]
+  platform: Platform
+  slider: SliderType[]
+  showSlider: boolean
 }
 
 export const useGlobalState = defineStore(STATE, () => {
   const globalState: GlobalState = reactive({
-    platform: [],
+    platform: 'desktop',
+    slider: [
+      {
+        title: 'title',
+        id: '1',
+      },
+    ],
+    showSlider: true,
   })
 
   function initialization() {
-    globalState.platform = getPlatforms()
+    windowResize()
   }
+
+  function windowResize() {
+    globalState.platform = window.document.body.clientWidth > 779 ? 'desktop' : 'mobile'
+  }
+
+  window.addEventListener('resize', useThrottleFn(windowResize))
+
   return {
     initialization,
     globalState,

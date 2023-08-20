@@ -28,7 +28,6 @@ const app = createApp(App)
 app.use(store)
 app.use(IonicVue)
 app.use(router)
-
 router.isReady().then(() => {
   app.mount('#app')
 })
